@@ -1,0 +1,412 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IPL</title>
+       
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "static/style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="static/lo.jpg"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script>
+        function hide_show(){
+        // call a jQuery function:
+            
+            $(".alert1").removeClass("hide");
+            $(".alert1").addClass("show");
+            $(".alert1").addClass("showAlert");
+
+            setTimeout(function(){
+                $(".alert1").removeClass("show");
+                $(".alert1").addClass("hide");
+            },5000);
+        }
+
+        function close_btn(){
+        // call a jQuery function:
+            $(".alert1").removeClass("show");
+            $(".alert1").addClass("hide");
+        }
+        </script>
+        <script>
+            function Battingfunction(){
+                var e = document.getElementById("batting-team");
+                var strUser = e.value;
+                if(strUser=='Mumbai Indians')
+                {
+                    document.getElementById("batting").src = "static/MI.png"; 
+                    document.getElementById("bat").innerHTML = "Mumbai Indians";
+                    document.getElementById("bat").style.color = "#47aafa";
+                                   
+                }
+                else if(strUser=='Kolkata Knight Riders')
+                {
+                    document.getElementById("batting").src = "static/KKR.png";  
+                    document.getElementById("bat").innerHTML = "Kolkata Knight Riders";  
+                    document.getElementById("bat").style.color = "#7542f5";
+                                 
+                }
+                else if(strUser=='Chennai Super Kings')
+                {
+                    document.getElementById("batting").src = "static/CSK.png";      
+                    document.getElementById("bat").innerHTML = "Chennai Super Kings"; 
+                    document.getElementById("bat").style.color = "#f5f242";
+                              
+                }
+                else if(strUser=='Rajasthan Royals')
+                {
+                    document.getElementById("batting").src = "static/RAJ.png";      
+                    document.getElementById("bat").innerHTML = "Rajasthan Royals"; 
+                    document.getElementById("bat").style.color = "#f542e3";          
+                }
+                else if(strUser=='Kings XI Punjab')
+                {
+                    document.getElementById("batting").src = "static/PUN.png";      
+                    document.getElementById("bat").innerHTML = "Punjab Kings";
+                    document.getElementById("bat").style.color = "#f50000";           
+                }
+                else if(strUser=='Royal Challengers Bangalore')
+                {
+                    document.getElementById("batting").src = "static/RCB.png";    
+                    document.getElementById("bat").innerHTML = "Royal Challengers Bangalore";   
+                    document.getElementById("bat").style.color = "#9e0808";          
+                }
+                else if(strUser=='Delhi Daredevils')
+                {
+                    document.getElementById("batting").src = "static/DC.png";    
+                    document.getElementById("bat").innerHTML = "Delhi Capitals";
+                    document.getElementById("bat").style.color = "#3641d9";             
+                }
+                else if(strUser=='Sunrisers Hyderabad')
+                {
+                    document.getElementById("batting").src = "static/SRH.png";  
+                    document.getElementById("bat").innerHTML = "Sunrisers Hyderabad";  
+                    document.getElementById("bat").style.color = "#d96f36";             
+                }
+                var batting=document.getElementById("batting-team").value;
+                var bowling =document.getElementById("bowling-team").value;
+                
+                if(batting==bowling)
+                {
+                    document.getElementById("content").innerHTML="Error! Batting Team & Bowling Team can't be same";
+                    document.getElementById("a").focus();
+                    hide_show();
+                    return false;
+                }
+             }
+
+             function Bowlingfunction(){
+                var e = document.getElementById("bowling-team");
+                var strUser = e.value;
+                if(strUser=='Mumbai Indians')
+                {
+                    document.getElementById("bowling").src = "static/MI.png";   
+                    document.getElementById("bowl").innerHTML = "Mumbai Indians"; 
+                    document.getElementById("bowl").style.color = "#47aafa"             
+                }
+                else if(strUser=='Kolkata Knight Riders')
+                {
+                    document.getElementById("bowling").src = "static/KKR.png";  
+                    document.getElementById("bowl").innerHTML = "Kolkata Knight Riders";               
+                    document.getElementById("bowl").style.color = "#7542f5";
+                }
+                else if(strUser=='Chennai Super Kings')
+                {
+                    document.getElementById("bowling").src = "static/CSK.png"; 
+                    document.getElementById("bowl").innerHTML = "Chennai Super Kings";               
+                    document.getElementById("bowl").style.color = "#f5f242";
+                }
+                else if(strUser=='Rajasthan Royals')
+                {
+                    document.getElementById("bowling").src = "static/RAJ.png";  
+                    document.getElementById("bowl").innerHTML = "Rajasthan Royals";               
+                    document.getElementById("bowl").style.color = "#f542e3"; 
+                }
+                else if(strUser=='Kings XI Punjab')
+                {
+                    document.getElementById("bowling").src = "static/PUN.png"; 
+                    document.getElementById("bowl").innerHTML = "Punjab Kings";               
+                    document.getElementById("bowl").style.color = "#f50000";
+                }
+                else if(strUser=='Royal Challengers Bangalore')
+                {
+                    document.getElementById("bowling").src = "static/RCB.png";  
+                    document.getElementById("bowl").innerHTML = "Royal Challengers Bangalore";               
+                    document.getElementById("bowl").style.color = "#9e0808";          
+
+                }
+                else if(strUser=='Delhi Daredevils')
+                {
+                    document.getElementById("bowling").src = "static/DC.png"; 
+                    document.getElementById("bowl").innerHTML = "Delhi Capitals";               
+                    document.getElementById("bowl").style.color = "#3641d9";             
+
+                }
+                else if(strUser=='Sunrisers Hyderabad')
+                {
+                    document.getElementById("bowling").src = "static/SRH.png";   
+                    document.getElementById("bowl").innerHTML = "Sunrisers Hyderabad";               
+                    document.getElementById("bowl").style.color = "#d96f36";             
+
+                }
+                var batting=document.getElementById("batting-team").value;
+                var bowling =document.getElementById("bowling-team").value;
+                
+                if(batting==bowling)
+                {
+                    document.getElementById("content").innerHTML="Error! Batting Team & Bowling Team can't be same"; 
+                    document.getElementById("a").focus();
+                    hide_show();
+                    
+                    return false;
+                }
+             }
+
+             function closebtn()
+             {
+                close_btn();
+             }
+             function validateForm() {
+                
+                var batting=document.getElementById("batting-team").value;
+                var bowling =document.getElementById("bowling-team").value;
+                
+                
+
+                var overs=document.getElementById("overs").value;
+                var runs=document.getElementById("runs").value;
+
+                var wickets=document.getElementById("wickets").value;
+
+                var runs_in_prev_4=document.getElementById("runs_in_prev_4").value;
+
+                var wickets_in_prev_4=document.getElementById("wickets_in_prev_4").value;
+                
+                if(batting==bowling)
+                {
+                    
+                    alert("Error! Batting Team & Bowling Team can't be same");
+                    return false;
+                }
+                if(overs==4)
+                {
+                    if(runs!=runs_in_prev_4)
+                    {
+                        var a='Error! Invalid value for Runs and Runs in prev 4 overs, since Overs are 4 then Runs and Runs in prev 4 overs must match';
+                        alert(a);
+                        
+                        return false;
+                    }
+                
+
+                    if(wickets!=wickets_in_prev_4)
+                    {
+                        var a= 'Error! Invalid value for Wickets and Wickets in prev 4 overs, since Overs are 4 then Wickets and Wickets in prev 4 overs must match';
+                        alert(a);
+                        
+                        return false;
+                    }
+                   
+                }
+                if(overs<4)
+                {
+                    var a="Error! Overs can't be less than 4";
+                    alert(a);
+                   
+                    return false;
+                }
+                if(overs>20)
+                {
+                    var a="Error! Invalid value for Overs";
+                    alert(a);
+                    
+                    return false;
+                }
+                if(runs<0)
+                {
+                    var a ="Error! Invalid value for Runs";
+                    alert(a);
+                    
+                    return false;
+                }
+                if(wickets<0 | wickets>10)
+                {
+                    var a="Error! Invalid value for Wickets";
+                    alert(a);
+                    
+                    return false;
+                }
+                if(runs_in_prev_4<0)
+                {
+                    var a="Error! Invalid value for Runs scored in previous 4 overs";
+                    alert(a);
+                    
+                    return false;
+                }
+                if(wickets==10)
+                {
+                    alert("Cannot predict as wickets are already 10");
+                    return false;
+                }
+
+                if(wickets_in_prev_4<0)
+                {
+                    var a="Error! Invalid value for wickets in previous 4 overs";
+                    alert(a);
+                    
+                    
+                    return false;
+                }
+                if(wickets_in_prev_4>10)
+                {
+                    var a="Error! Invalid value for wickets in previous 4 overs";
+                    alert(a);
+                    
+                    return false;
+                }
+                if(wickets_in_prev_4>wickets)
+                {
+                    var a="Error! Invalid value for wickets in previous 4 overs";
+                    alert(a);
+                    
+                    return false;
+                }
+
+                
+                
+
+    }
+        </script>
+    </head>
+
+    <body>
+        
+        <div class="alert1 hide" id="a">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="closebtn" onclick="closebtn()">&times;</span> 
+            <span class="msg" id="content">Warning! This is Error Message</span>
+        </div>
+        <section>
+        
+            <div class="container">
+                <div class="card">
+                    <div class="imgBx">
+                        <img id="batting" src="/static/—Pngtree—pattern cricket bat clipart ball_6024969.png">
+                        <h4>Batting Team</h4>
+                        <h5 id='bat'></h5>
+                    </div>
+                </div>
+                <div class="card1">
+                    <div class="imgBx">
+                        <h6  style="color: blanchedalmond; text-align: center; font-size: 1.5rem;">IPL FIRST INNING SCORE PREDICTION</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="color: blanchedalmond; text-align: center; font-size: 1.3rem;">Machine Learning Model</p>
+                      
+                        <form action="{{ url_for('pred')}}" method="post" onsubmit="return validateForm()" >
+                            <br/>
+                            <label>Batting-team</label>
+                            <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" id="batting-team" name="batting-team" onchange="Battingfunction()" required="required">
+                                <option value="none">--- Select a Batting team ---</option>
+                                        <option value="Mumbai Indians">Mumbai Indians</option>
+                                        <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                                        <option value="Chennai Super Kings">Chennai Super Kings</option>
+                                        <option value="Rajasthan Royals">Rajasthan Royals</option>
+                                        <option value="Kings XI Punjab">Punjab Kings</option>
+                                        <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                                        <option value="Delhi Daredevils">Delhi Capitals</option>
+                                        <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                            </select>
+                            <label>Bowling-team</label>
+                            <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" id="bowling-team" name="bowling-team" onchange="Bowlingfunction()" required="required">
+                                <option value="none">--- Select a Bowling team ---</option>
+                                        <option value="Mumbai Indians">Mumbai Indians</option>
+                                        <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                                        <option value="Chennai Super Kings">Chennai Super Kings</option>
+                                        <option value="Rajasthan Royals">Rajasthan Royals</option>
+                                        <option value="Kings XI Punjab">Punjab Kings</option>
+                                        <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                                        <option value="Delhi Daredevils">Delhi Capitals</option>
+                                        <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                            </select>
+                            <label>Venue</label>
+                            <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" id="venue" name="venue" required="required">
+                                <option value="none">--- Select a Venue ---</option>
+                                        <option value="Wankhede Stadium, Mumbai">Wankhede Stadium, Mumbai</option>
+                                        <option value="Eden Gardens, Kolkata">Eden Gardens, Kolkata</option>
+                                        <option value="Narendra Modi Stadium, Motera, Ahmedabad">Narendra Modi Stadium, Motera, Ahmedabad</option>
+                                        <option value="Feroz Shah Kotla Stadium, Delhi">Feroz Shah Kotla Stadium, Delhi</option>
+                                        <option value="M Chinnaswamy Stadium, Bangalore">M Chinnaswamy Stadium, Bangalore</option>
+                                        <option value="MA Chidambaram Stadium, Chepauk-Chennai">MA Chidambaram Stadium, Chepauk-Chennai</option>
+                                        <option value="MCA-Subrata Roy Sahara Stadium, Pune">MCA-Subrata Roy Sahara Stadium, Pune</option>
+                                        <option value="Punjab Cricket Association Stadium, Mohali">Punjab Cricket Association Stadium, Mohali</option>
+                                        <option value="Dr DY Patil Sports Academy, Navi Mumbai">Dr DY Patil Sports Academy, Navi Mumbai</option>
+
+                                        <option value="Rajiv Gandhi International Stadium, Uppal-Hyderabad">Rajiv Gandhi International Stadium, Uppal-Hyderabad</option>
+                                        
+                                        <option value="Sawai Mansingh Stadium, Jaipur">Sawai Mansingh Stadium, Jaipur</option>
+                                        <option value="Other">Other</option>
+                                        
+                            </select>
+                            <label>Overs</label>
+                            <input type="number" step="0.1" class="form-control" name="overs" id="overs"  placeholder="Overs (>= 4.0) eg. 7.2" required="required">  
+                            <br/>
+                            <label>Runs</label>
+                            <input type="number" class="form-control" name="runs" id="runs" placeholder="Runs eg. 64" required="required">  
+                            <br/>
+                            <label>Wickets</label>
+                            <input type="number" class="form-control" name="wickets" id="wickets" placeholder="Wickets eg. 4" required="required">  
+                            <br/>
+                            <label>Runs scored in previous 4 Overs</label>
+                            <input type="number" class="form-control" name="runs_in_prev_4" id="runs_in_prev_4" required="required">
+                            <br/>
+                            <label>Wickets taken in previous 4 Overs</label>
+                            <input type="number" class="form-control" name="wickets_in_prev_4" id="wickets_in_prev_4" required="required">
+                            <br/>
+                            <div style="text-align: center;">
+                                <button type="submit" class="btn-sim" ><span>Predict Score</span></button>  
+                            </div>
+                            <div class="h">
+                                <br>
+                                <p style="text-align: center; color: #fff; font-size: 1.5rem;">{{score}}</p>
+                            </div>    
+                            </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgBx">
+                        <img id="bowling" src="/static/—Pngtree—cricket ball in red colour_5988338.png">
+                        <h4>Bowling Team</h4>
+                        <h5 id='bowl'></h5>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </section>
+        
+        <footer class="bg-dark text-center text-white" style="position: relative ;z-index: 8;height: 20%;box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(15px);">
+            <!-- Grid container -->
+            
+                <br>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/lakkavaram-sai-anil-bharadwaj/" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+      
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/lsanilbharadwaj" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <div class="copy">
+                   <a class="text-light" href="https://www.linkedin.com/in/lakkavaram-sai-anil-bharadwaj/">Anil Bharadwaj</a>
+                  </div>
+                
+                  <br>
+        </footer>        
+    </body>
+</html>
