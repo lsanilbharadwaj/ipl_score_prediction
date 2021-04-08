@@ -109,7 +109,7 @@ qtconsole==5.0.3
 QtPy==1.9.0
 requests==2.25.1
 rope==0.18.0
-Rtree==0.9.4
+Rtree==0.9.7
 scikit-learn==0.24.1
 scipy==1.6.2
 seaborn==0.11.1
